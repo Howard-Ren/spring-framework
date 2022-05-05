@@ -22,6 +22,13 @@ ext {
 	}
 }
 
+repositories{
+	maven {
+		url 'https://maven.aliyun.com/nexus/content/groups/public/'
+	}
+	mavenCentral()
+}
+
 configure(allprojects) { project ->
 	apply plugin: "io.spring.dependency-management"
 

@@ -147,9 +147,11 @@ class ConfigurationClassBeanDefinitionReader {
 		}
 
 		if (configClass.isImported()) {
+			//把ConfigurationClass注册进Registry
 			registerBeanDefinitionForImportedConfigurationClass(configClass);
 		}
 		for (BeanMethod beanMethod : configClass.getBeanMethods()) {
+			//每个@Bean注解的方法，都转换成一个BeanDefinition，注册进Registry
 			loadBeanDefinitionsForBeanMethod(beanMethod);
 		}
 
@@ -235,6 +237,7 @@ class ConfigurationClassBeanDefinitionReader {
 		}
 		else {
 			// instance @Bean method
+			//实例方法，设置FactoryBeanName，调用方法的时候，需要先获取FactoryBean
 			beanDef.setFactoryBeanName(configClass.getBeanName());
 			beanDef.setUniqueFactoryMethodName(methodName);
 		}
