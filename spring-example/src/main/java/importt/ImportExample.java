@@ -1,4 +1,4 @@
-package org.springframework.example.importt;
+package importt;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Import;
