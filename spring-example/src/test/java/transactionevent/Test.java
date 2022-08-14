@@ -10,6 +10,8 @@ import org.springframework.jdbc.support.JdbcTransactionManager;
 import org.springframework.transaction.TransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import java.lang.reflect.Field;
+
 /**
  * @author rhx
  * @date 2022/7/20 17:52
@@ -42,9 +44,8 @@ public class Test {
 	}
 
 	public static void main(String[] args) {
-		final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Test.class);
+		final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Test.class,MyTestFactoryBean.class);
 		final Service service = context.getBean(Service.class);
-//		service.test();
-		service.testTimeout();
+		service.test();
 	}
 }

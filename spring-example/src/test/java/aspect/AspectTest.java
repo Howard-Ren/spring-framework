@@ -18,7 +18,7 @@ public class AspectTest {
 		return new AspectA();
 	}
 
-	@Bean
+//	@Bean
 	public AspectB aspectB() {
 		return new AspectB();
 	}
@@ -32,5 +32,6 @@ public class AspectTest {
 		final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AspectTest.class);
 		final Service service = context.getBean(Service.class);
 		service.test();
+		service.test1();
 	}
 }

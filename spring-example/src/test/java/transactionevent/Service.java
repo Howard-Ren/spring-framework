@@ -39,20 +39,20 @@ public class Service implements ApplicationContextAware {
 	}
 
 
-	@TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT, fallbackExecution = false)
+	@TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
 	public void handleEvent2(MyEvent event) {
 		System.out.print("after commit\t");
 		System.out.println(event);
 	}
 
 
-	@TransactionalEventListener(phase = TransactionPhase.AFTER_ROLLBACK, fallbackExecution = false)
+	@TransactionalEventListener(phase = TransactionPhase.AFTER_ROLLBACK)
 	public void handleEvent3(MyEvent event) {
 		System.out.print("after rollback\t");
 		System.out.println(event);
 	}
 
-	@TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION, fallbackExecution = false)
+	@TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
 	public void handleEvent4(MyEvent event) {
 		System.out.print("after completion\t");
 		System.out.println(event);

@@ -16,7 +16,17 @@ public class AspectA {
 	}
 
 	@Before("pt()")
+	public void before2() {
+		System.out.println("aspectA before");
+	}
+
+//	@Before("pt()")
 	public void before() {
+		System.out.println("aspectA before");
+	}
+
+//	@Before("pt()")
+	public void before3() {
 		System.out.println("aspectA before");
 	}
 
@@ -41,6 +51,10 @@ public class AspectA {
 		final Object proceed = proceedingJoinPoint.proceed();
 		System.out.println("aspectA around after");
 		return proceed;
+	}
+
+	public void test(){
+
 	}
 
 }

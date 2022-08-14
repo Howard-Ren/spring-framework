@@ -11,4 +11,9 @@ public class Service {
 	public void test() {
 		System.out.println("service");
 	}
+
+	public void test1(){
+		System.out.println("service2");
+		throw new RuntimeException("test");
+	}
 }

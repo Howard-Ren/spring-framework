@@ -203,13 +203,14 @@ class ConfigurationClassParser {
 			return;
 		}
 
-		//看是否已经有相同的ConfigurationClass，参考ConfigurationClass.equals()方法可知，如果是相同的类名，则判断为相同的ConfigurationClass。
+		// 看是否已经有相同的ConfigurationClass，
+		// 参考ConfigurationClass.equals()方法可知，如果是相同的类名，则判断为相同的ConfigurationClass。
 		ConfigurationClass existingClass = this.configurationClasses.get(configClass);
 		//已经解析过了
 		if (existingClass != null) {
 			if (configClass.isImported()) {
 				if (existingClass.isImported()) {
-					//如果老的和旧的都是被引入的，则合并一下引入信息
+					//如果老的和新的都是被引入的，则合并一下引入信息
 					existingClass.mergeImportedBy(configClass);
 				}
 				// Otherwise ignore new imported config class; existing non-imported class overrides it.
