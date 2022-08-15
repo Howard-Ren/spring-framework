@@ -545,7 +545,7 @@ class ConfigurationClassParser {
 		}
 	}
 
-	//对于@Import中
+	//处理@Import注解
 	private void processImports(ConfigurationClass configClass, SourceClass currentSourceClass,
 								Collection<SourceClass> importCandidates, Predicate<String> exclusionFilter,
 								boolean checkForCircularImports) {
